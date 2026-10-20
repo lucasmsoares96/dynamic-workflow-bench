@@ -1,0 +1,214 @@
+====================================================================================================
+BENCHMARK DE TOKENS: A (agente direto) x B (dynamic workflow) x C (Agent, sem workflow)
+====================================================================================================
+Data: 2026-10-20T08:13:42   claude: 2.1.304 (Claude Code)   proxy: http://127.0.0.1:8317
+Modelos: haiku=claude-haiku-5-5, deepseek=deepseek-v4.1-flash, gemini=gemini-3.8-flash-high   reps: 3   testes: t1
+Cenarios (mesma tarefa; muda quem faz o trabalho):
+  A = thread principal E subagente (--agent bench-researcher); nao ha orquestrador.
+  B = thread principal padrao -> Workflow /bench-t1 -> subagente bench-researcher.
+  C = thread principal padrao -> ferramenta Agent -> MESMO subagente; sem workflow.
+Isolamento: --setting-sources project, --strict-mcp-config, --append-system-prompt ' ', --permission-prompts none, cwd = project/; env SUBAGENT_MODEL=inherit, SUBAGENT_MODEL_FORCE=1, WORKFLOW_SUBAGENT_MODEL=<id>, WORKFLOW_MAX_CONCURRENT_AGENTS=1; User-Agent unico por execucao; B: --settings enableWorkflows.
+Ferramentas: A --tools=Read,Grep,Glob,StructuredOutput --allowedTools=Read,Grep,Glob; B --tools=Agent,Workflow,StructuredOutput,Read,Grep,Glob --allowedTools=Workflow,Agent; C --tools=Agent,Workflow,StructuredOutput,Read,Grep,Glob --allowedTools=Agent.
+Timeout: 900s   estabilizacao: 10s (max 90s)
+Validade B/C: execucao sem evidencia de subagente e INVALIDA ('nao delegou').
+
+----------------------------------------------------------------------------------------------------
+TESTE t1 / modelo haiku (claude-haiku-5-5)
+----------------------------------------------------------------------------------------------------
+  A: validas=3 invalidas=0 corretas=3
+  B: validas=3 invalidas=0 corretas=3 delegaram=3
+  C: validas=3 invalidas=0 corretas=3 delegaram=3
+  [TODAS as validas]
+    metrica               A med    A min    A max    B med    B min    B max    C med    C min    C max
+    input nao cacheado    1.418    1.209    1.432    7.985    6.844   13.850    5.260    4.469    7.061
+    cache_read           11.632   11.619   11.816  107.445  101.540  158.454   81.207   63.459   98.579
+    cache_creation        1.412    1.203    1.426    7.963    6.824   13.822    5.242    4.455    7.039
+    output                1.349    1.246    1.449    3.704    3.033    4.385    3.221    2.633    3.293
+    total                14.374   14.283   14.513  119.134  111.417  176.689   89.688   70.561  108.933
+    chamadas                  3        3        3        9        8       11        7        6        8
+    duracao s              10.5     10.1     14.8     19.4     17.4     24.0     20.2     18.4     20.6
+    n(A)=3 n(B)=3 n(C)=3
+  [so validas E corretas]
+    metrica               A med    A min    A max    B med    B min    B max    C med    C min    C max
+    input nao cacheado    1.418    1.209    1.432    7.985    6.844   13.850    5.260    4.469    7.061
+    cache_read           11.632   11.619   11.816  107.445  101.540  158.454   81.207   63.459   98.579
+    cache_creation        1.412    1.203    1.426    7.963    6.824   13.822    5.242    4.455    7.039
+    output                1.349    1.246    1.449    3.704    3.033    4.385    3.221    2.633    3.293
+    total                14.374   14.283   14.513  119.134  111.417  176.689   89.688   70.561  108.933
+    chamadas                  3        3        3        9        8       11        7        6        8
+    duracao s              10.5     10.1     14.8     19.4     17.4     24.0     20.2     18.4     20.6
+    n(A)=3 n(B)=3 n(C)=3
+  Tokens de chamadas com falha (incluidos nos totais; 499/5xx/failed): 0 em 0 linhas
+  Equivalencia de resultado (por repeticao, execucoes sem erro):
+    rep 1: A==gab=SIM  B==gab=SIM  C==gab=SIM  B==C=SIM
+    rep 2: A==gab=SIM  B==gab=SIM  C==gab=SIM  B==C=SIM
+    rep 3: A==gab=SIM  B==gab=SIM  C==gab=SIM  B==C=SIM
+
+----------------------------------------------------------------------------------------------------
+TESTE t1 / modelo deepseek (deepseek-v4.1-flash)
+----------------------------------------------------------------------------------------------------
+  A: validas=3 invalidas=0 corretas=3
+  B: validas=3 invalidas=0 corretas=3 delegaram=3
+  C: validas=3 invalidas=0 corretas=3 delegaram=3
+  [TODAS as validas]
+    metrica               A med    A min    A max    B med    B min    B max    C med    C min    C max
+    input nao cacheado    3.445      526    5.150    8.454    3.669   14.610    1.612    1.444   18.284
+    cache_read           14.848    4.992   18.048   77.568   53.120   89.472   29.440   12.672   29.696
+    cache_creation            0        0        0        0        0        0        0        0        0
+    output                1.435      855    2.261    2.441    2.014    3.030    1.343    1.282    1.704
+    total                16.809    9.292   25.459   94.192   59.230  100.956   32.299   32.166   33.012
+    chamadas                  4        3        6       10        7       11        5        5        5
+    duracao s              31.7     25.9    105.1     26.7     19.2     28.9     25.0     21.0     27.8
+    n(A)=3 n(B)=3 n(C)=3
+  [so validas E corretas]
+    metrica               A med    A min    A max    B med    B min    B max    C med    C min    C max
+    input nao cacheado    3.445      526    5.150    8.454    3.669   14.610    1.612    1.444   18.284
+    cache_read           14.848    4.992   18.048   77.568   53.120   89.472   29.440   12.672   29.696
+    cache_creation            0        0        0        0        0        0        0        0        0
+    output                1.435      855    2.261    2.441    2.014    3.030    1.343    1.282    1.704
+    total                16.809    9.292   25.459   94.192   59.230  100.956   32.299   32.166   33.012
+    chamadas                  4        3        6       10        7       11        5        5        5
+    duracao s              31.7     25.9    105.1     26.7     19.2     28.9     25.0     21.0     27.8
+    n(A)=3 n(B)=3 n(C)=3
+  Tokens de chamadas com falha (incluidos nos totais; 499/5xx/failed): 0 em 1 linhas
+  Equivalencia de resultado (por repeticao, execucoes sem erro):
+    rep 1: A==gab=SIM  B==gab=SIM  C==gab=SIM  B==C=SIM
+    rep 2: A==gab=SIM  B==gab=SIM  C==gab=SIM  B==C=SIM
+    rep 3: A==gab=SIM  B==gab=SIM  C==gab=SIM  B==C=SIM
+
+----------------------------------------------------------------------------------------------------
+TESTE t1 / modelo gemini (gemini-3.8-flash-high)
+----------------------------------------------------------------------------------------------------
+  A: validas=3 invalidas=0 corretas=3
+  B: validas=3 invalidas=0 corretas=3 delegaram=3
+  C: validas=3 invalidas=0 corretas=3 delegaram=3
+  [TODAS as validas]
+    metrica               A med    A min    A max    B med    B min    B max    C med    C min    C max
+    input nao cacheado   48.018   36.886   51.434  169.578  102.021  241.998   85.034   63.040  140.432
+    cache_read                0        0    1.858    8.391        0  379.423        0        0    8.278
+    cache_creation            0        0        0        0        0        0        0        0        0
+    output                2.033    1.936    2.843    8.710    5.530    8.724    5.183    3.736    8.738
+    total                51.909   38.822   54.277  186.693  107.551  630.131   90.217   75.054  149.170
+    chamadas                 14       11       15       26       13       31       18       15       25
+    duracao s              51.5     40.3     61.5    102.2    100.8    103.7    119.6    103.8    141.6
+    n(A)=3 n(B)=3 n(C)=3
+  [so validas E corretas]
+    metrica               A med    A min    A max    B med    B min    B max    C med    C min    C max
+    input nao cacheado   48.018   36.886   51.434  169.578  102.021  241.998   85.034   63.040  140.432
+    cache_read                0        0    1.858    8.391        0  379.423        0        0    8.278
+    cache_creation            0        0        0        0        0        0        0        0        0
+    output                2.033    1.936    2.843    8.710    5.530    8.724    5.183    3.736    8.738
+    total                51.909   38.822   54.277  186.693  107.551  630.131   90.217   75.054  149.170
+    chamadas                 14       11       15       26       13       31       18       15       25
+    duracao s              51.5     40.3     61.5    102.2    100.8    103.7    119.6    103.8    141.6
+    n(A)=3 n(B)=3 n(C)=3
+  Tokens de chamadas com falha (incluidos nos totais; 499/5xx/failed): 0 em 0 linhas
+  Equivalencia de resultado (por repeticao, execucoes sem erro):
+    rep 1: A==gab=SIM  B==gab=SIM  C==gab=SIM  B==C=SIM
+    rep 2: A==gab=SIM  B==gab=SIM  C==gab=SIM  B==C=SIM
+    rep 3: A==gab=SIM  B==gab=SIM  C==gab=SIM  B==C=SIM
+
+====================================================================================================
+EXECUCOES (uuid, teste, rep, cenario, modelo, status, tokens, duracao)
+====================================================================================================
+bench-26a1d036-e6d2-413a-b479-9d2db68f3960 t1 rep1 A haiku    ok       total=14.374 linhas=3 falhas=0 dur=10.5s resultado=correto via=structured_output turns=9 term=completed
+bench-ed2c7096-715d-4794-bba5-4201c42a2c14 t1 rep1 B haiku    ok       total=176.689 linhas=11 falhas=0 dur=24.0s resultado=correto via=structured_output turns=5 term=completed delegou=sim
+bench-cb3f8987-b208-458e-9ae0-f193f212fc87 t1 rep1 C haiku    ok       total=108.933 linhas=8 falhas=0 dur=20.2s resultado=correto via=structured_output turns=3 term=completed delegou=sim
+bench-b1246d33-3412-4b3e-b13b-faef1780e45a t1 rep2 B haiku    ok       total=119.134 linhas=9 falhas=0 dur=19.4s resultado=correto via=structured_output turns=2 term=completed delegou=sim
+bench-1abf285f-ec62-4c80-8e3d-308543046019 t1 rep2 C haiku    ok       total=70.561 linhas=6 falhas=0 dur=20.6s resultado=correto via=structured_output turns=4 term=completed delegou=sim
+bench-91f161d2-f433-4816-b6e9-181ec966a5b7 t1 rep2 A haiku    ok       total=14.513 linhas=3 falhas=0 dur=14.8s resultado=correto via=structured_output turns=9 term=completed
+bench-7682a880-d0ff-499d-8c76-04d753bd8e4e t1 rep3 C haiku    ok       total=89.688 linhas=7 falhas=0 dur=18.4s resultado=correto via=structured_output turns=2 term=completed delegou=sim
+bench-f09e6cb7-0042-402a-a0aa-0cf056d52b1c t1 rep3 A haiku    ok       total=14.283 linhas=3 falhas=0 dur=10.1s resultado=correto via=structured_output turns=9 term=completed
+bench-f605ba04-f7f5-4a47-a9ba-5549e16f4967 t1 rep3 B haiku    ok       total=111.417 linhas=8 falhas=0 dur=17.4s resultado=correto via=structured_output turns=2 term=completed delegou=sim
+bench-a4e28e7c-93fb-4046-8a75-a1bc05e47228 t1 rep1 A deepseek ok       total=25.459 linhas=4 falhas=0 dur=25.9s resultado=correto via=structured_output turns=12 term=completed
+bench-6f274d78-1c50-4ff0-8282-dc0280342fe2 t1 rep1 B deepseek ok       total=94.192 linhas=10 falhas=0 dur=19.2s resultado=correto via=structured_output turns=8 term=completed delegou=sim
+bench-c69cf330-7e22-4718-aa40-20b043f1e26e t1 rep1 C deepseek ok       total=32.299 linhas=5 falhas=0 dur=27.8s resultado=correto via=structured_output turns=3 term=completed delegou=sim
+bench-177a836f-e5e2-4773-9f08-01b69e535970 t1 rep2 B deepseek ok       total=100.956 linhas=11 falhas=0 dur=28.9s resultado=correto via=structured_output turns=3 term=completed delegou=sim
+bench-0979e0bb-68d3-4c17-82bf-1906d0d54443 t1 rep2 C deepseek ok       total=33.012 linhas=5 falhas=0 dur=25.0s resultado=correto via=structured_output turns=3 term=completed delegou=sim
+bench-c22b96d9-3697-49e1-8c3d-e627c162ed26 t1 rep2 A deepseek ok       total=9.292 linhas=3 falhas=0 dur=31.7s resultado=correto via=structured_output turns=9 term=completed
+bench-9285912b-7551-4b18-924c-71598643b38e t1 rep3 C deepseek ok       total=32.166 linhas=5 falhas=0 dur=21.0s resultado=correto via=structured_output turns=3 term=completed delegou=sim
+bench-1d279edb-9b45-436d-9e70-48ae887a8679 t1 rep3 A deepseek ok       total=16.809 linhas=6 falhas=0 dur=105.1s resultado=correto via=structured_output turns=13 term=completed
+bench-92fab41d-f03e-4e1b-90e7-0141c0b81d40 t1 rep3 B deepseek ok       total=59.230 linhas=7 falhas=0 dur=26.7s resultado=correto via=structured_output turns=5 term=completed delegou=sim
+bench-bd6b993b-4794-4c94-871a-b522d30bf5c4 t1 rep1 A gemini   ok       total=51.909 linhas=14 falhas=0 dur=51.5s resultado=correto via=structured_output turns=15 term=completed
+bench-dd77a507-c28f-4acb-bbec-666332c0cc21 t1 rep1 B gemini   ok       total=630.131 linhas=31 falhas=0 dur=103.7s resultado=correto via=structured_output turns=17 term=completed delegou=sim
+bench-f67bed47-bbe5-4b4c-88b2-59b919370e38 t1 rep1 C gemini   ok       total=149.170 linhas=25 falhas=0 dur=119.6s resultado=correto via=structured_output turns=3 term=completed delegou=sim
+bench-7506e106-50c5-487f-84c2-5d6bf3cb9b14 t1 rep2 B gemini   ok       total=186.693 linhas=26 falhas=0 dur=102.2s resultado=correto via=structured_output turns=2 term=completed delegou=sim
+bench-2c93f0a9-9799-4f40-8600-7368d03411f0 t1 rep2 C gemini   ok       total=75.054 linhas=15 falhas=0 dur=103.8s resultado=correto via=structured_output turns=3 term=completed delegou=sim
+bench-03359a84-d427-4843-8244-063b8d0e327e t1 rep2 A gemini   ok       total=54.277 linhas=15 falhas=0 dur=61.5s resultado=correto via=structured_output turns=16 term=completed
+bench-0b5d57cc-6053-4049-a342-fd8c23da561b t1 rep3 C gemini   ok       total=90.217 linhas=18 falhas=0 dur=141.6s resultado=correto via=structured_output turns=3 term=completed delegou=sim
+bench-aa2ef140-0e98-4081-8382-d8b595efd204 t1 rep3 A gemini   ok       total=38.822 linhas=11 falhas=0 dur=40.3s resultado=correto via=structured_output turns=12 term=completed
+bench-c532b974-0cd1-42b3-a47d-063d2cf2eee4 t1 rep3 B gemini   ok       total=107.551 linhas=13 falhas=0 dur=100.8s resultado=correto via=structured_output turns=2 term=completed delegou=sim
+
+====================================================================================================
+TOTAL GERAL (soma das execucoes validas; consumo real, falhas incluidas)
+====================================================================================================
+  GERAL      metrica                        A             B             C
+             input nao cacheado       149.518       569.009       326.636
+             cache_read                74.813       975.413       323.331
+             cache_creation             4.041        28.609        16.736
+             output                    15.407        41.571        31.133
+             total                    239.738     1.585.993       681.100
+             chamadas                      62           126            94
+             duracao s (soma)           351.3         442.1         498.1
+  haiku      metrica                        A             B             C
+             input nao cacheado         4.059        28.679        16.790
+             cache_read                35.067       367.439       243.245
+             cache_creation             4.041        28.609        16.736
+             output                     4.044        11.122         9.147
+             total                     43.170       407.240       269.182
+             chamadas                       9            28            21
+             duracao s (soma)            35.3          60.8          59.3
+  deepseek   metrica                        A             B             C
+             input nao cacheado         9.121        26.733        21.340
+             cache_read                37.888       220.160        71.808
+             cache_creation                 0             0             0
+             output                     4.551         7.485         4.329
+             total                     51.560       254.378        97.477
+             chamadas                      13            28            15
+             duracao s (soma)           162.7          74.7          73.8
+  gemini     metrica                        A             B             C
+             input nao cacheado       136.338       513.597       288.506
+             cache_read                 1.858       387.814         8.278
+             cache_creation                 0             0             0
+             output                     6.812        22.964        17.657
+             total                    145.008       924.375       314.441
+             chamadas                      40            70            58
+             duracao s (soma)           153.3         306.6         365.0
+
+====================================================================================================
+COMPARACAO ENTRE CENARIOS (soma das execucoes validas)
+====================================================================================================
+  B sobre C = o que o DYNAMIC WORKFLOW custa a mais que delegar ao mesmo subagente sem workflow.
+  C sobre A = o que custa TER um orquestrador delegando, em vez de o agente ser a thread principal.
+  B sobre A = o numero de antes (workflow contra agente direto): inclui orquestrador E workflow.
+  escopo     metrica                      A           B           C       B/C       C/A       B/A
+  GERAL      total                  239.738   1.585.993     681.100   +132.9%   +184.1%   +561.6%
+  GERAL      input nao cacheado     149.518     569.009     326.636    +74.2%   +118.5%   +280.6%
+  haiku      total                   43.170     407.240     269.182    +51.3%   +523.5%   +843.3%
+  haiku      input nao cacheado       4.059      28.679      16.790    +70.8%   +313.6%   +606.6%
+  deepseek   total                   51.560     254.378      97.477   +161.0%    +89.1%   +393.4%
+  deepseek   input nao cacheado       9.121      26.733      21.340    +25.3%   +134.0%   +193.1%
+  gemini     total                  145.008     924.375     314.441   +194.0%   +116.8%   +537.5%
+  gemini     input nao cacheado     136.338     513.597     288.506    +78.0%   +111.6%   +276.7%
+
+====================================================================================================
+RESUMO: quanto o dynamic workflow custa a mais que delegar ao mesmo subagente sem workflow
+====================================================================================================
+  GERAL       B sobre C: total +132.9%   input nao cacheado +74.2%
+  haiku       B sobre C: total +51.3%   input nao cacheado +70.8%
+  deepseek    B sobre C: total +161.0%   input nao cacheado +25.3%
+  gemini      B sobre C: total +194.0%   input nao cacheado +78.0%
+  (B sobre C > 0 = o workflow consome mais; a diferenca e o custo extra do orquestrador do workflow sobre a delegacao direta.)
+
+====================================================================================================
+RESSALVAS
+====================================================================================================
+  - Execucoes invalidas: 0 de 27; por 'nao delegou': 0 []
+  - 'Nao delegou' = sem subagent_stats.spawned>=1 (exato, mas so ve a ferramenta Agent) e sem duas faixas de input no banco (min*2<=max); limites no cabecalho do bench.py.
+  - Execucoes validas com resultado incorreto: 0 (fora do bloco 'validas E corretas').
+  - Possivel sono/suspensao (duracao de parede >> janela do banco): 0 execucao(oes) []
+  - Linhas com falha do proxy (failed/499/5xx, ex.: 429): 1. Tokens delas estao nos totais.
+  - Origem do resultado (cenario, fonte): [('A', 'structured_output'), ('B', 'structured_output'), ('C', 'structured_output')]. Se diferir entre cenarios, a comparacao de saida depende do parser de texto.
+  - O Gemini quase nao reporta cache_read (quase sempre 0): NAO comparar a parcela de cache dele com a dos outros modelos.
+  - Amostras pequenas, um unico dia, cache de prompt do provedor varia entre execucoes: nao generalizar.
+  - Cada execucao inclui overhead fixo do harness (system prompt, ferramentas), igual nos tres cenarios por construcao.

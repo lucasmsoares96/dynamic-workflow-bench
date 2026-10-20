@@ -1,0 +1,1648 @@
+{
+ "meta": {
+  "date": "2026-10-20T06:16:32",
+  "claude": "2.1.304 (Claude Code)",
+  "base_url": "http://127.0.0.1:8317",
+  "models": [
+   "haiku",
+   "deepseek",
+   "gemini"
+  ],
+  "reps": 3,
+  "tests": [
+   "t1"
+  ],
+  "timeout": 900,
+  "stable": 10,
+  "max_wait": 90,
+  "total": 18
+ },
+ "runs": [
+  {
+   "uuid": "bench-a95998b2-723e-4398-8bdf-8d7430563a16",
+   "test": "t1",
+   "rep": 1,
+   "scen": "A",
+   "model_key": "haiku",
+   "model": "claude-haiku-5-5",
+   "invalid": [],
+   "wall": 9.990754094003933,
+   "agg": {
+    "n": 3,
+    "total": 14304,
+    "prompt": 13036,
+    "completion": 1268,
+    "cache_read": 7813,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "claude-haiku-5-5": 3
+    },
+    "first_ms": 1792487795000,
+    "last_ms": 1792487800180
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 9,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"frontend/AGENTS.md\",\"heading\":\"Frontend Guide\"},{\"path\":\"frontend/apps/web/AGENTS.md\",\"heading"
+  },
+  {
+   "uuid": "bench-21d81c6b-341b-45cf-8971-6e04bc60fbf1",
+   "test": "t1",
+   "rep": 1,
+   "scen": "B",
+   "model_key": "haiku",
+   "model": "claude-haiku-5-5",
+   "invalid": [],
+   "wall": 23.296958814025857,
+   "agg": {
+    "n": 10,
+    "total": 171159,
+    "prompt": 166998,
+    "completion": 4161,
+    "cache_read": 128030,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "claude-haiku-5-5": 10
+    },
+    "first_ms": 1792487815988,
+    "last_ms": 1792487834918
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 3,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "origin",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"frontend/AGENTS.md\",\"heading\":\"Frontend Guide\"},{\"path\":\"frontend/apps/web/AGENTS.md\",\"heading"
+  },
+  {
+   "uuid": "bench-3919cf5e-8d57-439c-9e7b-7edea116fc8e",
+   "test": "t1",
+   "rep": 2,
+   "scen": "B",
+   "model_key": "haiku",
+   "model": "claude-haiku-5-5",
+   "invalid": [],
+   "wall": 18.665968690998852,
+   "agg": {
+    "n": 8,
+    "total": 125347,
+    "prompt": 122393,
+    "completion": 2954,
+    "cache_read": 113375,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "claude-haiku-5-5": 8
+    },
+    "first_ms": 1792487849970,
+    "last_ms": 1792487864061
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 3,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "origin",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"frontend/AGENTS.md\",\"heading\":\"Frontend Guide\"},{\"path\":\"frontend/apps/web/AGENTS.md\",\"heading"
+  },
+  {
+   "uuid": "bench-eeab002e-9530-454e-8c61-d676204a66cb",
+   "test": "t1",
+   "rep": 2,
+   "scen": "A",
+   "model_key": "haiku",
+   "model": "claude-haiku-5-5",
+   "invalid": [],
+   "wall": 10.633108228008496,
+   "agg": {
+    "n": 3,
+    "total": 14421,
+    "prompt": 13037,
+    "completion": 1384,
+    "cache_read": 11619,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "claude-haiku-5-5": 3
+    },
+    "first_ms": 1792487878607,
+    "last_ms": 1792487884431
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 9,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"frontend/AGENTS.md\",\"heading\":\"Frontend Guide\"},{\"path\":\"frontend/apps/web/AGENTS.md\",\"heading"
+  },
+  {
+   "uuid": "bench-5b3494f3-4957-4d24-a39c-c3ed159dfa89",
+   "test": "t1",
+   "rep": 3,
+   "scen": "A",
+   "model_key": "haiku",
+   "model": "claude-haiku-5-5",
+   "invalid": [],
+   "wall": 11.928777141991304,
+   "agg": {
+    "n": 4,
+    "total": 20221,
+    "prompt": 18646,
+    "completion": 1575,
+    "cache_read": 16836,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "claude-haiku-5-5": 4
+    },
+    "first_ms": 1792487899502,
+    "last_ms": 1792487907332
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 10,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"frontend/AGENTS.md\",\"heading\":\"Frontend Guide\"},{\"path\":\"frontend/apps/web/AGENTS.md\",\"heading"
+  },
+  {
+   "uuid": "bench-5dea3e92-2671-41de-8fd9-48f658a4b3bb",
+   "test": "t1",
+   "rep": 3,
+   "scen": "B",
+   "model_key": "haiku",
+   "model": "claude-haiku-5-5",
+   "invalid": [],
+   "wall": 17.35763504402712,
+   "agg": {
+    "n": 7,
+    "total": 103023,
+    "prompt": 99809,
+    "completion": 3214,
+    "cache_read": 90963,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "claude-haiku-5-5": 7
+    },
+    "first_ms": 1792487921894,
+    "last_ms": 1792487933648
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 2,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "origin",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"frontend/AGENTS.md\",\"heading\":\"Frontend Guide\"},{\"path\":\"frontend/apps/web/AGENTS.md\",\"heading"
+  },
+  {
+   "uuid": "bench-5c4af80a-065e-4a2e-876e-49577ab5228b",
+   "test": "t1",
+   "rep": 1,
+   "scen": "A",
+   "model_key": "deepseek",
+   "model": "deepseek-v4.1-flash",
+   "invalid": [],
+   "wall": 9.065937164996285,
+   "agg": {
+    "n": 3,
+    "total": 9397,
+    "prompt": 8506,
+    "completion": 891,
+    "cache_read": 4992,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "deepseek-v4.1-flash": 3
+    },
+    "first_ms": 1792487949657,
+    "last_ms": 1792487954988
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 9,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"frontend/AGENTS.md\",\"heading\":\"Frontend Guide\"},{\"path\":\"frontend/apps/web/AGENTS.md\",\"heading"
+  },
+  {
+   "uuid": "bench-e22cbdc3-d7aa-4886-bf0c-3b1773e70277",
+   "test": "t1",
+   "rep": 1,
+   "scen": "B",
+   "model_key": "deepseek",
+   "model": "deepseek-v4.1-flash",
+   "invalid": [],
+   "wall": 55.929272409994155,
+   "agg": {
+    "n": 6,
+    "total": 51774,
+    "prompt": 50306,
+    "completion": 1468,
+    "cache_read": 31744,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "deepseek-v4.1-flash": 6
+    },
+    "first_ms": 1792487968995,
+    "last_ms": 1792487999007
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 4,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"frontend/AGENTS.md\",\"heading\":\"Frontend Guide\"},{\"path\":\"frontend/apps/web/AGENTS.md\",\"heading"
+  },
+  {
+   "uuid": "bench-250ec0e9-3ec8-4cc8-974d-c10a7b3d401c",
+   "test": "t1",
+   "rep": 2,
+   "scen": "B",
+   "model_key": "deepseek",
+   "model": "deepseek-v4.1-flash",
+   "invalid": [],
+   "wall": 20.88044944399735,
+   "agg": {
+    "n": 7,
+    "total": 65900,
+    "prompt": 63371,
+    "completion": 2529,
+    "cache_read": 60288,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "deepseek-v4.1-flash": 7
+    },
+    "first_ms": 1792488035444,
+    "last_ms": 1792488051716
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 6,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"docs/deep/nested/AGENTS.md\",\"heading\":\"Deeply Nested Docs Rules\"},{\"path\":\"frontend/AGENTS.md\""
+  },
+  {
+   "uuid": "bench-cdeb0c66-a3ea-4468-824a-1b9bb14e28d9",
+   "test": "t1",
+   "rep": 2,
+   "scen": "A",
+   "model_key": "deepseek",
+   "model": "deepseek-v4.1-flash",
+   "invalid": [],
+   "wall": 31.03010124800494,
+   "agg": {
+    "n": 6,
+    "total": 41065,
+    "prompt": 38655,
+    "completion": 2410,
+    "cache_read": 32512,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "deepseek-v4.1-flash": 6
+    },
+    "first_ms": 1792488066457,
+    "last_ms": 1792488093039
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 20,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"docs/deep/nested/AGENTS.md\",\"heading\":\"Deeply Nested Docs Rules\"},{\"path\":\"frontend/AGENTS.md\""
+  },
+  {
+   "uuid": "bench-f689a762-81ed-4c34-b9d4-1bc18a86cc74",
+   "test": "t1",
+   "rep": 3,
+   "scen": "A",
+   "model_key": "deepseek",
+   "model": "deepseek-v4.1-flash",
+   "invalid": [],
+   "wall": 16.09503619800671,
+   "agg": {
+    "n": 3,
+    "total": 9345,
+    "prompt": 8494,
+    "completion": 851,
+    "cache_read": 7552,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "deepseek-v4.1-flash": 3
+    },
+    "first_ms": 1792488107832,
+    "last_ms": 1792488119522
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 10,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"frontend/AGENTS.md\",\"heading\":\"Frontend Guide\"},{\"path\":\"frontend/apps/web/AGENTS.md\",\"heading"
+  },
+  {
+   "uuid": "bench-9432ef90-9c23-4197-bd1e-43f3086f062c",
+   "test": "t1",
+   "rep": 3,
+   "scen": "B",
+   "model_key": "deepseek",
+   "model": "deepseek-v4.1-flash",
+   "invalid": [],
+   "wall": 22.240254856005777,
+   "agg": {
+    "n": 7,
+    "total": 65254,
+    "prompt": 63314,
+    "completion": 1940,
+    "cache_read": 60288,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "deepseek-v4.1-flash": 7
+    },
+    "first_ms": 1792488134300,
+    "last_ms": 1792488152324
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 5,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"frontend/AGENTS.md\",\"heading\":\"Frontend Guide\"},{\"path\":\"frontend/apps/web/AGENTS.md\",\"heading"
+  },
+  {
+   "uuid": "bench-3b84c103-fe27-4bf6-b75a-5523c56906bc",
+   "test": "t1",
+   "rep": 1,
+   "scen": "A",
+   "model_key": "gemini",
+   "model": "gemini-3.8-flash-high",
+   "invalid": [],
+   "wall": 37.169512076012325,
+   "agg": {
+    "n": 10,
+    "total": 36423,
+    "prompt": 34652,
+    "completion": 1771,
+    "cache_read": 0,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "gemini-3.8-flash-high": 10
+    },
+    "first_ms": 1792488168951,
+    "last_ms": 1792488198466
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 11,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"heading\":\"Deeply Nested Docs Rules\",\"path\":\"docs/deep/nested/AGENTS.md\"},{\"heading\":\"Frontend Guide\",\"path\":\"fr"
+  },
+  {
+   "uuid": "bench-ab7d18ba-7ba2-4831-a202-90270a3e7447",
+   "test": "t1",
+   "rep": 1,
+   "scen": "B",
+   "model_key": "gemini",
+   "model": "gemini-3.8-flash-high",
+   "invalid": [],
+   "wall": 76.3974703180138,
+   "agg": {
+    "n": 26,
+    "total": 206168,
+    "prompt": 199927,
+    "completion": 6241,
+    "cache_read": 3573,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "gemini-3.8-flash-high": 26
+    },
+    "first_ms": 1792488216724,
+    "last_ms": 1792488286108
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 2,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "origin",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"heading\":\"Backend Standards\",\"path\":\"backend/AGENTS.md\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"docs/deep/nested/AGENTS.md\",\"heading\":\"Deeply Nested Docs Rules\"},{\"path\":\"frontend/AGENTS.md\""
+  },
+  {
+   "uuid": "bench-3a447f4f-069f-4c90-be07-1fc7730abd19",
+   "test": "t1",
+   "rep": 2,
+   "scen": "B",
+   "model_key": "gemini",
+   "model": "gemini-3.8-flash-high",
+   "invalid": [],
+   "wall": 73.82473278098041,
+   "agg": {
+    "n": 27,
+    "total": 266267,
+    "prompt": 259156,
+    "completion": 7111,
+    "cache_read": 10068,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "gemini-3.8-flash-high": 27
+    },
+    "first_ms": 1792488303187,
+    "last_ms": 1792488369448
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 2,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "origin",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"heading\":\"Backend Standards\",\"path\":\"backend/AGENTS.md\"},{\"heading\":\"API Conventions\",\"path\":\"backend/apps/api/AGENTS.md\"},{\"heading\":\"Deeply Nested Docs Rules\",\"path\":\"docs/deep/nested/AGENTS.md\"},{\"heading\":\"Frontend Guide\",\"path\":\"fr"
+  },
+  {
+   "uuid": "bench-dc704bc3-a86b-4849-b067-e11beff01e51",
+   "test": "t1",
+   "rep": 2,
+   "scen": "A",
+   "model_key": "gemini",
+   "model": "gemini-3.8-flash-high",
+   "invalid": [],
+   "wall": 35.81191310400027,
+   "agg": {
+    "n": 11,
+    "total": 37574,
+    "prompt": 36188,
+    "completion": 1386,
+    "cache_read": 0,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "gemini-3.8-flash-high": 11
+    },
+    "first_ms": 1792488387524,
+    "last_ms": 1792488417347
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 12,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"heading\":\"API Conventions\",\"path\":\"backend/apps/api/AGENTS.md\"},{\"heading\":\"Deeply Nested Docs Rules\",\"path\":\"docs/deep/nested/AGENTS.md\"},{\"heading\":\"Frontend Guide\",\"path\":\"fr"
+  },
+  {
+   "uuid": "bench-face61d7-3e58-48b9-9429-8ccd9ff9a598",
+   "test": "t1",
+   "rep": 3,
+   "scen": "A",
+   "model_key": "gemini",
+   "model": "gemini-3.8-flash-high",
+   "invalid": [],
+   "wall": 35.30787838899414,
+   "agg": {
+    "n": 12,
+    "total": 43533,
+    "prompt": 41819,
+    "completion": 1714,
+    "cache_read": 0,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "gemini-3.8-flash-high": 12
+    },
+    "first_ms": 1792488433546,
+    "last_ms": 1792488463553
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 13,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"heading\":\"API Conventions\",\"path\":\"backend/apps/api/AGENTS.md\"},{\"path\":\"docs/deep/nested/AGENTS.md\",\"heading\":\"Deeply Nested Docs Rules\"},{\"path\":\"frontend/AGENTS.md\""
+  },
+  {
+   "uuid": "bench-395cb9a3-578b-4321-8eb2-2ac8f02bfae7",
+   "test": "t1",
+   "rep": 3,
+   "scen": "B",
+   "model_key": "gemini",
+   "model": "gemini-3.8-flash-high",
+   "invalid": [],
+   "wall": 76.8922391429951,
+   "agg": {
+    "n": 26,
+    "total": 222350,
+    "prompt": 215779,
+    "completion": 6571,
+    "cache_read": 10068,
+    "fail_total": 0,
+    "fail_n": 0,
+    "models": {
+     "gemini-3.8-flash-high": 26
+    },
+    "first_ms": 1792488479397,
+    "last_ms": 1792488548818
+   },
+   "extract": "structured_output",
+   "correct": true,
+   "result_norm": {
+    "count": 6,
+    "files": [
+     [
+      "AGENTS.md",
+      "Fixture Root Guide"
+     ],
+     [
+      "backend/AGENTS.md",
+      "Backend Standards"
+     ],
+     [
+      "backend/apps/api/AGENTS.md",
+      "API Conventions"
+     ],
+     [
+      "docs/deep/nested/AGENTS.md",
+      "Deeply Nested Docs Rules"
+     ],
+     [
+      "frontend/AGENTS.md",
+      "Frontend Guide"
+     ],
+     [
+      "frontend/apps/web/AGENTS.md",
+      "Web App Notes"
+     ]
+    ]
+   },
+   "num_turns": 2,
+   "terminal_reason": "completed",
+   "keys": [
+    "api_error_status",
+    "duration_api_ms",
+    "duration_ms",
+    "fast_mode_disabled_reason",
+    "fast_mode_state",
+    "first_content_frame_ms",
+    "is_error",
+    "modelUsage",
+    "num_turns",
+    "origin",
+    "permission_denials",
+    "queued_turn_count",
+    "result",
+    "result_index",
+    "safety_stops",
+    "session_id",
+    "stop_reason",
+    "structured_output",
+    "subagent_stats",
+    "subtype",
+    "terminal_reason",
+    "time_to_request_ms",
+    "total_cost_usd",
+    "ttft_ms",
+    "ttft_stream_ms",
+    "type",
+    "usage",
+    "uuid"
+   ],
+   "sleep": false,
+   "stable": true,
+   "exit": 0,
+   "result_excerpt": "{\"count\":6,\"files\":[{\"path\":\"AGENTS.md\",\"heading\":\"Fixture Root Guide\"},{\"path\":\"backend/AGENTS.md\",\"heading\":\"Backend Standards\"},{\"path\":\"backend/apps/api/AGENTS.md\",\"heading\":\"API Conventions\"},{\"path\":\"docs/deep/nested/AGENTS.md\",\"heading\":\"Deeply Nested Docs Rules\"},{\"path\":\"frontend/AGENTS.md\""
+  }
+ ]
+}

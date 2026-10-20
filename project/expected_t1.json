@@ -1,0 +1,29 @@
+{
+ "count": 6,
+ "files": [
+  {
+   "path": "AGENTS.md",
+   "heading": "Fixture Root Guide"
+  },
+  {
+   "path": "backend/AGENTS.md",
+   "heading": "Backend Standards"
+  },
+  {
+   "path": "backend/apps/api/AGENTS.md",
+   "heading": "API Conventions"
+  },
+  {
+   "path": "docs/deep/nested/AGENTS.md",
+   "heading": "Deeply Nested Docs Rules"
+  },
+  {
+   "path": "frontend/AGENTS.md",
+   "heading": "Frontend Guide"
+  },
+  {
+   "path": "frontend/apps/web/AGENTS.md",
+   "heading": "Web App Notes"
+  }
+ ]
+}

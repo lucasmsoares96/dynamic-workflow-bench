@@ -1,0 +1,129 @@
+====================================================================================================
+BENCHMARK DE TOKENS: subagente direto (A) vs dynamic workflow (B)
+====================================================================================================
+Data: 2026-10-20T06:16:32   claude: 2.1.304 (Claude Code)   proxy: http://127.0.0.1:8317
+Modelos: haiku=claude-haiku-5-5, deepseek=deepseek-v4.1-flash, gemini=gemini-3.8-flash-high   reps: 3   testes: t1
+Isolamento: --setting-sources project, --strict-mcp-config, --append-system-prompt ' ', --permission-prompts none, cwd = project/; env SUBAGENT_MODEL=inherit, SUBAGENT_MODEL_FORCE=1, WORKFLOW_SUBAGENT_MODEL=<id>, WORKFLOW_MAX_CONCURRENT_AGENTS=1; User-Agent unico por execucao. B: --settings enableWorkflows.
+Timeout: 900s   estabilizacao: 10s (max 90s)
+
+----------------------------------------------------------------------------------------------------
+TESTE t1 / modelo haiku (claude-haiku-5-5)
+----------------------------------------------------------------------------------------------------
+  A: validas=3 invalidas=0 corretas=3
+  B: validas=3 invalidas=0 corretas=3
+  [TODAS as validas]
+    metrica             A med      A min      A max      B med      B min      B max        B-A      B/A
+    total_tokens       14.421     14.304     20.221    125.347    103.023    171.159    110.926  +769.2%
+    prompt             13.037     13.036     18.646    122.393     99.809    166.998    109.356  +838.8%
+    completion          1.384      1.268      1.575      3.214      2.954      4.161      1.830  +132.2%
+    cache_read         11.619      7.813     16.836    113.375     90.963    128.030    101.756  +875.8%
+    duracao s            10.6       10.0       11.9       18.7       17.4       23.3        8.0   +75.5%
+    n(A)=3 n(B)=3
+  [so validas E corretas]
+    metrica             A med      A min      A max      B med      B min      B max        B-A      B/A
+    total_tokens       14.421     14.304     20.221    125.347    103.023    171.159    110.926  +769.2%
+    prompt             13.037     13.036     18.646    122.393     99.809    166.998    109.356  +838.8%
+    completion          1.384      1.268      1.575      3.214      2.954      4.161      1.830  +132.2%
+    cache_read         11.619      7.813     16.836    113.375     90.963    128.030    101.756  +875.8%
+    duracao s            10.6       10.0       11.9       18.7       17.4       23.3        8.0   +75.5%
+    n(A)=3 n(B)=3
+  Tokens de chamadas com falha (incluidos nos totais; 499/5xx/failed): 0 em 0 linhas
+  Equivalencia de resultado (por repeticao, execucoes sem erro):
+    rep 1: A==B=SIM  A==gab=SIM  B==gab=SIM
+    rep 2: A==B=SIM  A==gab=SIM  B==gab=SIM
+    rep 3: A==B=SIM  A==gab=SIM  B==gab=SIM
+
+----------------------------------------------------------------------------------------------------
+TESTE t1 / modelo deepseek (deepseek-v4.1-flash)
+----------------------------------------------------------------------------------------------------
+  A: validas=3 invalidas=0 corretas=3
+  B: validas=3 invalidas=0 corretas=3
+  [TODAS as validas]
+    metrica             A med      A min      A max      B med      B min      B max        B-A      B/A
+    total_tokens        9.397      9.345     41.065     65.254     51.774     65.900     55.857  +594.4%
+    prompt              8.506      8.494     38.655     63.314     50.306     63.371     54.808  +644.3%
+    completion            891        851      2.410      1.940      1.468      2.529      1.049  +117.7%
+    cache_read          7.552      4.992     32.512     60.288     31.744     60.288     52.736  +698.3%
+    duracao s            16.1        9.1       31.0       22.2       20.9       55.9        6.1   +38.2%
+    n(A)=3 n(B)=3
+  [so validas E corretas]
+    metrica             A med      A min      A max      B med      B min      B max        B-A      B/A
+    total_tokens        9.397      9.345     41.065     65.254     51.774     65.900     55.857  +594.4%
+    prompt              8.506      8.494     38.655     63.314     50.306     63.371     54.808  +644.3%
+    completion            891        851      2.410      1.940      1.468      2.529      1.049  +117.7%
+    cache_read          7.552      4.992     32.512     60.288     31.744     60.288     52.736  +698.3%
+    duracao s            16.1        9.1       31.0       22.2       20.9       55.9        6.1   +38.2%
+    n(A)=3 n(B)=3
+  Tokens de chamadas com falha (incluidos nos totais; 499/5xx/failed): 0 em 0 linhas
+  Equivalencia de resultado (por repeticao, execucoes sem erro):
+    rep 1: A==B=SIM  A==gab=SIM  B==gab=SIM
+    rep 2: A==B=SIM  A==gab=SIM  B==gab=SIM
+    rep 3: A==B=SIM  A==gab=SIM  B==gab=SIM
+
+----------------------------------------------------------------------------------------------------
+TESTE t1 / modelo gemini (gemini-3.8-flash-high)
+----------------------------------------------------------------------------------------------------
+  A: validas=3 invalidas=0 corretas=3
+  B: validas=3 invalidas=0 corretas=3
+  [TODAS as validas]
+    metrica             A med      A min      A max      B med      B min      B max        B-A      B/A
+    total_tokens       37.574     36.423     43.533    222.350    206.168    266.267    184.776  +491.8%
+    prompt             36.188     34.652     41.819    215.779    199.927    259.156    179.591  +496.3%
+    completion          1.714      1.386      1.771      6.571      6.241      7.111      4.857  +283.4%
+    cache_read              0          0          0     10.068      3.573     10.068     10.068        -
+    duracao s            35.8       35.3       37.2       76.4       73.8       76.9       40.6  +113.3%
+    n(A)=3 n(B)=3
+  [so validas E corretas]
+    metrica             A med      A min      A max      B med      B min      B max        B-A      B/A
+    total_tokens       37.574     36.423     43.533    222.350    206.168    266.267    184.776  +491.8%
+    prompt             36.188     34.652     41.819    215.779    199.927    259.156    179.591  +496.3%
+    completion          1.714      1.386      1.771      6.571      6.241      7.111      4.857  +283.4%
+    cache_read              0          0          0     10.068      3.573     10.068     10.068        -
+    duracao s            35.8       35.3       37.2       76.4       73.8       76.9       40.6  +113.3%
+    n(A)=3 n(B)=3
+  Tokens de chamadas com falha (incluidos nos totais; 499/5xx/failed): 0 em 0 linhas
+  Equivalencia de resultado (por repeticao, execucoes sem erro):
+    rep 1: A==B=SIM  A==gab=SIM  B==gab=SIM
+    rep 2: A==B=SIM  A==gab=SIM  B==gab=SIM
+    rep 3: A==B=SIM  A==gab=SIM  B==gab=SIM
+
+====================================================================================================
+EXECUCOES (uuid, teste, rep, cenario, modelo, status, tokens, duracao)
+====================================================================================================
+bench-a95998b2-723e-4398-8bdf-8d7430563a16 t1 rep1 A haiku    ok       total=14.304 linhas=3 falhas=0 dur=10.0s resultado=correto via=structured_output turns=9 term=completed
+bench-21d81c6b-341b-45cf-8971-6e04bc60fbf1 t1 rep1 B haiku    ok       total=171.159 linhas=10 falhas=0 dur=23.3s resultado=correto via=structured_output turns=3 term=completed
+bench-3919cf5e-8d57-439c-9e7b-7edea116fc8e t1 rep2 B haiku    ok       total=125.347 linhas=8 falhas=0 dur=18.7s resultado=correto via=structured_output turns=3 term=completed
+bench-eeab002e-9530-454e-8c61-d676204a66cb t1 rep2 A haiku    ok       total=14.421 linhas=3 falhas=0 dur=10.6s resultado=correto via=structured_output turns=9 term=completed
+bench-5b3494f3-4957-4d24-a39c-c3ed159dfa89 t1 rep3 A haiku    ok       total=20.221 linhas=4 falhas=0 dur=11.9s resultado=correto via=structured_output turns=10 term=completed
+bench-5dea3e92-2671-41de-8fd9-48f658a4b3bb t1 rep3 B haiku    ok       total=103.023 linhas=7 falhas=0 dur=17.4s resultado=correto via=structured_output turns=2 term=completed
+bench-5c4af80a-065e-4a2e-876e-49577ab5228b t1 rep1 A deepseek ok       total=9.397 linhas=3 falhas=0 dur=9.1s resultado=correto via=structured_output turns=9 term=completed
+bench-e22cbdc3-d7aa-4886-bf0c-3b1773e70277 t1 rep1 B deepseek ok       total=51.774 linhas=6 falhas=0 dur=55.9s resultado=correto via=structured_output turns=4 term=completed
+bench-250ec0e9-3ec8-4cc8-974d-c10a7b3d401c t1 rep2 B deepseek ok       total=65.900 linhas=7 falhas=0 dur=20.9s resultado=correto via=structured_output turns=6 term=completed
+bench-cdeb0c66-a3ea-4468-824a-1b9bb14e28d9 t1 rep2 A deepseek ok       total=41.065 linhas=6 falhas=0 dur=31.0s resultado=correto via=structured_output turns=20 term=completed
+bench-f689a762-81ed-4c34-b9d4-1bc18a86cc74 t1 rep3 A deepseek ok       total=9.345 linhas=3 falhas=0 dur=16.1s resultado=correto via=structured_output turns=10 term=completed
+bench-9432ef90-9c23-4197-bd1e-43f3086f062c t1 rep3 B deepseek ok       total=65.254 linhas=7 falhas=0 dur=22.2s resultado=correto via=structured_output turns=5 term=completed
+bench-3b84c103-fe27-4bf6-b75a-5523c56906bc t1 rep1 A gemini   ok       total=36.423 linhas=10 falhas=0 dur=37.2s resultado=correto via=structured_output turns=11 term=completed
+bench-ab7d18ba-7ba2-4831-a202-90270a3e7447 t1 rep1 B gemini   ok       total=206.168 linhas=26 falhas=0 dur=76.4s resultado=correto via=structured_output turns=2 term=completed
+bench-3a447f4f-069f-4c90-be07-1fc7730abd19 t1 rep2 B gemini   ok       total=266.267 linhas=27 falhas=0 dur=73.8s resultado=correto via=structured_output turns=2 term=completed
+bench-dc704bc3-a86b-4849-b067-e11beff01e51 t1 rep2 A gemini   ok       total=37.574 linhas=11 falhas=0 dur=35.8s resultado=correto via=structured_output turns=12 term=completed
+bench-face61d7-3e58-48b9-9429-8ccd9ff9a598 t1 rep3 A gemini   ok       total=43.533 linhas=12 falhas=0 dur=35.3s resultado=correto via=structured_output turns=13 term=completed
+bench-395cb9a3-578b-4321-8eb2-2ac8f02bfae7 t1 rep3 B gemini   ok       total=222.350 linhas=26 falhas=0 dur=76.9s resultado=correto via=structured_output turns=2 term=completed
+
+====================================================================================================
+TOTAL GERAL (soma de tokens das execucoes validas; consumo real, falhas incluidas)
+====================================================================================================
+  GERAL            A=       226.283  B=     1.277.242  B sobre A = +464.4%
+  haiku            A=        48.946  B=       399.529  B sobre A = +716.3%
+  deepseek         A=        59.807  B=       182.928  B sobre A = +205.9%
+  gemini           A=       117.530  B=       694.785  B sobre A = +491.2%
+
+====================================================================================================
+RESSALVAS
+====================================================================================================
+  - Execucoes invalidas: 0 de 18.
+  - Execucoes validas com resultado incorreto: 0 (fora do bloco 'validas E corretas').
+  - Possivel sono/suspensao (duracao de parede >> janela do banco): 0 execucao(oes) []
+  - Linhas com falha do proxy (failed/499/5xx, ex.: 429): 0. Tokens delas estao nos totais.
+  - Origem do resultado (cenario, fonte): [('A', 'structured_output'), ('B', 'structured_output')]. Se diferir entre A e B, a comparacao de saida depende do parser de texto.
+  - Amostras pequenas, um unico dia, cache de prompt do provedor varia entre execucoes: nao generalizar.
+  - Cada execucao inclui overhead fixo do harness (system prompt, ferramentas), igual nos dois cenarios por construcao.
